@@ -1,6 +1,6 @@
 # Pixel Playground – Community Gaming Website (PHP)
 
-**Pixel Playground** adalah website komunitas game yang dirancang untuk meningkatkan interaksi antar gamer. Website ini menyediakan ruang bagi pengguna untuk berbagi review game, berdiskusi, berbagi tips & trik, serta mencari teman bermain. Ide awal desain dan konsep UI dikembangkan melalui prototype Canva sebelum diimplementasikan menjadi website berbasis PHP.
+**Pixel Playground** adalah website komunitas game yang dirancang untuk meningkatkan interaksi antar gamer. Website ini menyediakan ruang bagi pengguna untuk berbagi review game, berdiskusi, berbagi tips & trik, serta mencari teman bermain.
 
 ---
 
