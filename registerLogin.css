@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --primary: hsl(175, 58%, 49%);
+    --secondary: hsl(175, 58%, 49%);
+    --background: #1a1b26 !important;
+    --text: white;
+    --error: #bf616a;
+    --success: #b5e28e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.form-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--background);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pixel clouds animation */
+.form-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(45deg, transparent 20%, #ffffff10 25%, transparent 25%),
+        linear-gradient(-45deg, transparent 20%, #ffffff10 25%, transparent 25%),
+        linear-gradient(-45deg, transparent 75%, #ffffff10 80%, transparent 80%),
+        linear-gradient(45deg, transparent 75%, #ffffff10 80%, transparent 80%);
+    background-size: 60px 60px;
+    animation: backgroundScroll 30s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes backgroundScroll {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 60px 60px;
+    }
+}
+
+.form-container form {
+    padding: 2rem;
+    width: min(90%, 500px);
+    background: #282a36;
+    border: 4px solid var(--primary);
+    box-shadow: 8px 8px 0 var(--secondary);
+    position: relative;
+    image-rendering: pixelated;
+    animation: formFloat 3s ease-in-out infinite;
+}
+
+@keyframes formFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.form-container form h3 {
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px var(--primary);
+}
+
+.form-container form input,
+.form-container form select {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    background: var(--background);
+    border: 3px solid var(--primary);
+    color: var(--text);
+    font-size: 0.8rem;
+}
+
+.form-container form input:focus,
+.form-container form select:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 2px var(--primary);
+}
+
+.form-container form .form-btn {
+    background: var(--primary);
+    color: var(--text);
+    padding: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    image-rendering: pixelated;
+    text-transform: uppercase;
+}
+
+.form-container form .form-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 #ff63d8;
+}
+
+.form-container form .form-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+.form-container form p {
+    margin-top: 1rem;
+    color: var(--text);
+    font-size: 0.7rem;
+    line-height: 1.5;
+}
+
+.form-container form p a {
+    color: var(--secondary);
+    text-decoration: none;
+    position: relative;
+}
+
+.form-container form p a:hover::after {
+    content: '►';
+    position: absolute;
+    right: -15px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.form-container form .error-msg {
+    background: var(--error);
+    color: white;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    font-size: 0.7rem;
+    border: 2px solid darker(var(--error), 20%);
+    animation: shake 0.5s linear;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .form-container form {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .form-container form h3 {
+        font-size: 1rem;
+    }
+}

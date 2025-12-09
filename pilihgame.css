@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e2e;
+  margin: 0;
+  padding: 0;
+
+}
+
+.com_container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px #545481;
+  margin-bottom: 20px;
+}
+
+.community-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.community-card {
+  background-color: #e6e6ef;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+
+.community-card:hover {
+  transform: scale(1.05);
+}
+
+.community-cover {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.community-title {
+  font-size: 24px;
+  color: black;
+  margin: 10px 0;
+  margin-bottom: 20px;
+}
+
+.community-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.join-btn {
+  background-color: #545481;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.join-btn:hover {
+  background-color: #e3c7f3;
+}

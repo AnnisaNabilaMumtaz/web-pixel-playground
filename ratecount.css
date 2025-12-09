@@ -1,0 +1,57 @@
+:root {
+    --primary: #181736;
+    --secondary: #252549;
+    --text-color: white;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    font-size: 24px;
+    /* Sesuaikan ukuran bintang */
+    color: rgb(190, 189, 196);
+}
+
+.rating-info {
+    margin-left: 10px;
+    /* Jarak antara bintang dan informasi */
+}
+
+.rating-value {
+    font-weight: bold;
+}
+
+
+
+/*rating dibawah*/
+.rate {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.rate-avg {
+    width: 25%;
+    background-color: var(--secondary);
+    padding: .3rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.rate-avg h1 {
+    font-size: 20px;
+}
+
+.rate-avg p {
+    font-size: 12px;
+    letter-spacing: .1rem;
+}
+
+.rate-avg .stars-inner {
+    color: gold;
+}

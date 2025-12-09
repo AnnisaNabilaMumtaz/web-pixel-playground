@@ -1,0 +1,123 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1b26 !important;
+}
+
+.card {
+    background: #282a36;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+}
+
+/* Form styles */
+.form-label {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    border: 1px solid rgba(108, 92, 231, 0.3);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.form-control:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+    outline: none;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: #6c5ce7;
+    border: 1px solid #6c5ce7;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-bottom: 30px;
+}
+
+.btn:hover {
+    background-color: #a363d9;
+}
+
+.btn-outline-primary {
+    background-color: #ffffff;
+    color: #6c5ce7;
+    border-color: #6c5ce7;
+    margin-left: 50px;
+}
+
+.btn-outline-primary:hover {
+    background-color: #6c5ce7;
+    color: #ffffff;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .card {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Profile picture styles */
+#profile-picture {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+
+.account-settings-fileinput {
+    font-size: 14px;
+    color: #6c5ce7;
+    cursor: pointer;
+}
+
+/* Tab content */
+.tab-content {
+    margin-top: 20px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #dcdcdc;
+    margin: 20px 0;
+}

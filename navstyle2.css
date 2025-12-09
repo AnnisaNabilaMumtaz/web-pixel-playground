@@ -1,0 +1,336 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsl(175, 58%, 49%);
+    --title-color: #fff;
+    /* Font color for navbar text set to white */
+    --text-color: hsl(230, 12%, 40%);
+    --body-color: #2c2166;
+    /* Your desired blue color code */
+    --container-color: hsl(230, 100%, 97%);
+    --border-color: hsl(230, 25%, 80%);
+
+    /*========== Font and typography ==========*/
+    /* .5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Syne", sans-serif;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: 0.938rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== z index ==========*/
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1023px) {
+    :root {
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 1rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+main {
+    padding-top: 7rem;
+}
+
+nav {
+    width: 100%;
+    background-color: #2c2166;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    border-bottom: 1px solid #ff63d8;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    width: 100%;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.search {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-modal);
+    background-color: hsla(230, 75%, 15%, 0.1);
+    /* Adjust transparency if needed */
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    /* For safari */
+    padding: 8rem 1.5rem 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+}
+
+.search__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+/*=============== HEADER & NAV ===============*/
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    width: 100%;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav__logo {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color .4s;
+}
+
+.img_logo {
+    display: inline-block;
+    padding: 2px;
+    width: 80px;
+    height: 80px;
+    margin-left: 50px;
+    margin-right: -40px;
+    /* Set the margin-right to 10px */
+}
+
+.nav__actions {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.nav__search,
+.nav__login,
+.nav__toggle,
+.nav__close {
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: color .4s;
+}
+
+:is(.nav__logo, .nav__search, .nav__login, .nav__toggle, .nav__link):hover {
+    color: var(--first-color);
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+    .nav__menu {
+        position: sticky;
+        top: -100%;
+        left: 0;
+        background-color: var(--body-color);
+        box-shadow: 0 8px 16px hsla(230, 75%, 32%, .15);
+        width: 100%;
+        padding-block: 4.5rem 4rem;
+        transition: top .4s;
+    }
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    text-align: center;
+    margin: auto;
+    width: fit-content;
+    margin-right: 140px;
+}
+
+.nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color .4s;
+}
+
+.nav__actions {
+    margin-right: 100px;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+
+li {
+    float: left;
+}
+
+li a,
+.dropbtn {
+    display: inline-block;
+    color: hsl(230, 100%, 97%);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.user-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 75%;
+    right: 6%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+}
+
+.sub-menu {
+    background: #403380;
+    padding: 20px;
+    margin: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info h2 {
+    font-weight: 500;
+    color: #ccc;
+}
+
+.sub-menu .user-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    margin: 12px 0;
+}
+
+.sub-menu-link p {
+    width: 100%;
+}
+
+.sub-menu-link span {
+    font-size: 22px;
+    transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span {
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+    font-weight: 600;
+    border-bottom: 1px solid #ff63d8;
+    color: var(--first-color);
+}
+
+
+
+/* For large devices */
+@media screen and (min-width: 1023px) {
+    .nav {
+        height: calc(var(--header-height) + 2rem);
+        column-gap: 3rem;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__menu {
+        margin-left: auto;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .container {
+        margin-inline: auto;
+    }
+}

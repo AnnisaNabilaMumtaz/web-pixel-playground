@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Game - Minecraft</title>
+  <link rel="stylesheet" href="reviewgame.css">
+  <link rel="stylesheet" href="ratecount.css">
+  <link rel="stylesheet" href="navstyle2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Bagian Navigasi -->
+  <nav class="nav container">
+    <img src="LogoPP.png" class="img_logo">
+    <a href="home.html" class="nav__logo">Pixel Playground</a>
+
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="home2.html" class="nav__link">Home</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="pilihgame.html" class="nav__link">Game</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="pilihkomunitas.html" class="nav__link">Community</a>
+        </li>
+    </div>
+
+    <div class="nav__actions">
+
+      <!-- Login button -->
+      <img src="pp02.png" class="user-pic" onclick="toggleMenu()">
+
+      <div class="sub-menu-wrap" id="subMenu" onmouseleave="closeMenu()">
+        <div class="sub-menu">
+          <div class="user-info">
+            <img src="pp02.png">
+            <h2>kobskuy_beat</h2>
+          </div>
+          <hr>
+
+          <a href="profile_01.html" class="sub-menu-link">
+            <p>Edit Profile</p>
+            <span>></span>
+          </a>
+          <a href="home.html" class="sub-menu-link">
+            <p>Log Out</p>
+            <span>></span>
+          </a>
+        </div>
+      </div>
+  </nav>
+  <script src="navmain.js"></script>
+
+  <section class="game-review-page">
+    <div class="game-header">
+      <div class="wrapper">
+        <div class="slides">
+          <span id="slide-1"></span>
+          <span id="slide-2"></span>
+          <span id="slide-3"></span>
+          <div class="game-img">
+            <img src="minecraft3.jpg" alt="Game minecraft1" class="game-image">
+            <img src="minecraft1.jpg" alt="Game minecraft2" class="game-image">
+            <img src="minecraft2.jpg" alt="Game minecraft3" class="game-image">
+          </div>
+          <div class="navigation">
+            <a href="#slide-1">1</a>
+            <a href="#slide-2">2</a>
+            <a href="#slide-3">3</a>
+          </div>
+        </div>
+      </div>
+      <div class="game-info">
+        <h1>Minecraft</h1>
+        <p>Mojang Studios</p>
+        <p>Usia 7+</p>
+        <div class="rating-container">
+          <div class="stars"></div>
+          <div class="rating-info">
+            <span class="rating-value">4.3</span>
+            <span class="stars">&#9733;</span>
+          </div>
+          <div><span class="total-reviews">1,24 juta ulasan</span></div>
+        </div>
+        <div class="game-genres">
+          <span class="genre">Game Survival</span>
+          <span class="genre">Game Action-Adventure</span>
+        </div>
+        <div class="game-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.mojang.minecraftpe" target="_blank"
+            class="play-now">Mainkan Sekarang</a>
+          <a href="https://discord.gg/vXFhqkdM" target="_blank" class="create-room">Main Bareng</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-details">
+      <nav class="tabs">
+        <button class="tab active" data-tab="about">About</button>
+        <button class="tab" data-tab="comments">Komentar</button>
+        <button class="tab" data-tab="community">Komunitas</button>
+      </nav>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="about">
+          <h2>Deskripsi Game</h2>
+          <p>Minecraft adalah sebuah permainan video sandbox yang dikembangkan oleh Mojang Studios. Pemain dapat
+            menjelajahi dunia blok yang luas, membangun berbagai struktur, serta bertahan hidup melawan monster.</p>
+        </div>
+
+        <div class="tab-pane" id="comments">
+          <h2>Komentar</h2>
+          <div class="comments-list" id="comments-list">
+            <div class="comment">
+              <div class="player-profile">
+                <img src="pp05.png" alt="Foto Profil Player 1">phoenix.ashes
+              </div>
+              <div class="comment-content">
+                <p>"Game ini sangat seru, terutama untuk mabar!"</p>
+                <p>⭐⭐⭐⭐⭐</p>
+              </div>
+            </div>
+          </div>
+          <div class="typing-bar">
+            <div class="komen-wrapper">
+              <h3>Beri rating dan komentar anda mengenai game</h3>
+              <div class="rating">
+                <input type="number" id="rating-value" name="rating" hidden>
+                <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+                <i class='bx bx-star star' style="--i: 0;"></i>
+                <i class='bx bx-star star' style="--i: 1;"></i>
+                <i class='bx bx-star star' style="--i: 2;"></i>
+                <i class='bx bx-star star' style="--i: 3;"></i>
+                <i class='bx bx-star star' style="--i: 4;"></i>
+              </div>
+              <input class="typing-input" id="comment-input" name="opinion" cols="30" rows="5"
+                placeholder="Tambahkan komentar anda..."></input>
+              <div class="btn-group">
+                <button type="button" class="btn-cancel">Cancel</button>
+                <button type="submit" class="btn-send" id="send-comment">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="community">
+          <h2>Komunitas</h2>
+          <p>Bergabung dengan komunitas Minecraft di Pixel Playground untuk berdiskusi, berbagi tips, dan menemukan
+            teman bermain.</p>
+          <a href="https://discord.gg/UnfYZV62" class="join-community">Gabung Komunitas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const allStar = document.querySelectorAll('.star');
+
+    allStar.forEach((item, idx) => {
+      item.addEventListener('click', function () {
+        allStar.forEach(i => {
+          i.classList.replace('bxs-star', 'bx-star');
+          i.classList.remove('active');
+        });
+
+        for (let i = 0; i <= idx; i++) {
+          allStar[i].classList.replace('bx-star', 'bxs-star');
+          allStar[i].classList.add('active');
+        }
+
+        // Simpan nilai penilaian ke input tersembunyi
+        document.getElementById('rating-value').value = idx + 1;
+      });
+    });
+
+    document.getElementById('send-comment').addEventListener('click', function () {
+      const commentInput = document.getElementById('comment-input');
+      const commentsList = document.getElementById('comments-list');
+      const ratingValue = document.getElementById('rating-value').value;
+
+      if (commentInput.value.trim() !== '') {
+        const newComment = document.createElement('div');
+        newComment.classList.add('comment');
+
+        const stars = '⭐'.repeat(ratingValue);
+        newComment.innerHTML = `
+        <div class="player-profile">
+          <img src="pp02.png" alt="Foto Profil"> kobskuy_beat
+        </div>
+        <div class="comment-content">
+          <p>"${commentInput.value}"</p>
+          <p>${stars}</p>
+        </div>
+      `;
+
+        commentsList.appendChild(newComment);
+        commentInput.value = '';
+
+        // Reset rating setelah mengirim komentar
+        allStar.forEach(i => {
+          i.classList.replace('bxs-star', 'bx-star');
+          i.classList.remove('active');
+        });
+        document.getElementById('rating-value').value = ''; // Reset nilai penilaian
+      }
+    });
+  </script>
+</body>
+
+<!-- Komunitas Tab -->
+<div class=" tab-pane" id="community">
+  <h2>Komunitas</h2>
+  <p>Bergabung dengan komunitas Minecraft di Pixel Playground untuk berdiskusi, berbagi tips, dan
+    menemukan
+    teman bermain.</p>
+  <a href="roomkomunitas.html" class="join-community">Gabung Komunitas</a>
+</div>
+</div>
+</div>
+</section>
+
+<script src="reviewgame.js"></script>
+<script>
+  let subMenu = document.getElementById("subMenu");
+
+  function toggleMenu() {
+    subMenu.classList.toggle("open-menu");
+  }
+
+  function closeMenu() {
+    subMenu.classList.remove("open-menu");
+  }
+</script>
+
+<script>
+  document.getElementById('send-comment').addEventListener('click', function () {
+    const commentInput = document.getElementById('comment-input');
+    const commentsList = document.getElementById('comments-list');
+
+    if (commentInput.value.trim() !== '') {
+      const newComment = document.createElement('div');
+      newComment.classList.add('comment');
+
+      newComment.innerHTML = `
+        <div class="player-profile">
+          <img src="pp02.png" alt="Foto Profil"> kobskuy_beat
+        </div>
+        <div class="comment-content">
+          <p>"${commentInput.value}"</p>
+          <p>⭐⭐⭐⭐⭐</p>
+        </div>
+      `;
+
+      commentsList.appendChild(newComment);
+      commentInput.value = '';
+    }
+  });
+</script>
+
+
+<script>
+  allStar.forEach((item, idx) => {
+    item.addEventListener('click', function () {
+      allStar.forEach(i => {
+        i.classList.replace('bxs-star', 'bx-star');
+        i.classList.remove('active')
+      })
+
+      for (let i = 0; i < allStar.length; i++) {
+        if (i <= idx) {
+          allStar[i].classList.replace('bx-star', 'bxs-star');
+          allStar[i].classList.add('active');
+        } else {
+          allStar[i].style.setProperty('--click', click);
+          click++
+        }
+      }
+    })
+  })
+</script>
+
+
+</html>
