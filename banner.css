@@ -1,0 +1,107 @@
+.banner {
+    background-image: url("tes2.jpg") !important;
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* overlay */
+    z-index: 0;
+}
+
+.banner h1 {
+    font-size: 48px;
+    font-style: bold;
+    z-index: 2;
+    color: #f0c040;
+}
+.banner h2 {
+    font-size: 40px;
+    z-index: 2;
+    color: #f0c040;
+}
+
+.banner p {
+    font-size: 20px;
+    margin: 20px 0;
+    z-index: 2;
+    max-width: 800px;
+    color: white !important;
+}
+
+/* Animasi tulisan di dalam banner */
+@keyframes slideIn {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .banner h1, .banner h2, .banner p {
+    animation: slideIn 1s ease-out forwards;
+  }
+  
+  .banner h1 {
+    animation-delay: 0.2s;
+  }
+  
+  .banner h2 {
+    animation-delay: 0.4s;
+  }
+  
+  .banner p {
+    animation-delay: 0.6s;
+  }
+  
+
+/* Efek blur di bagian bawah banner */
+.banner {
+  background-image: url("tes2.jpg") !important;
+  background-size: cover;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* Pastikan tidak ada overflow */
+
+  /* Tambahkan efek blur bagian bawah */
+  mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0));
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Slight overlay to darken banner */
+  backdrop-filter: blur(0px); /* Efek blur di bagian bawah */
+  z-index: 0;
+}
+
+/* Pastikan teks tidak terpengaruh blur */
+.banner h1, .banner h2, .banner p {
+  position: relative;
+  z-index: 1;
+  color: #f0c040;
+}
